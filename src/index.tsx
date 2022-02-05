@@ -1,45 +1,46 @@
-// / Что нужно написать вместо xxx yyy zzz, чтобы увидеть ожидаемый результат?
-// //
-// //     Ответ дайте через пробел, пример: a={12} ccc={video.id} d={'hello'}
-//
-//
-// copy
- import ReactDOM from 'react-dom'
-import React from 'react'
+import React, {useState} from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
 
- export const VideoHeader = (props: {videoName: string}) => {
-     return <div>
-         😀 {props.videoName}
-     </div>
- }
- export const VideoContent = (props: {videoContent: string}) => {
-     return <div>
-         📼 <a href={props.videoContent}>{props.videoContent}</a>
-     </div>
- }
- export const VideoDescription = (props: {videoDescription: string}) => {
-    return <div>
-         📑 {props.videoDescription}
-    </div>
+type UserType = {
+    id: number
+    name: string
+    age: number
 }
- export const YoutubeVideo = (props: any) => {
 
-     return <div>
-         <VideoHeader videoName={props.video.title}/>
-        <VideoContent videoContent={props.video.link} />
-         <VideoDescription videoDescription={props.video.description} />
-     </div>
- }
-//
- export const App = () => {
-     const video = {
-         title: 'Samurai way',
-         link: 'https://www.youtube.com/watch?v=gb7gMluAeao&list=PLcvhF2Wqh7DNVy1OCUpG3i5lyxyBWhGZ8',
-         description: 'Best free react-course'
-     }
+function User(props: UserType) {
 
-     return <YoutubeVideo video={video} />
- }
+    return (
+        <li>User {props.name}: {props.age} y.o.</li>
+    )
+}
+
+function UsersList() {
+    const states = [
+        {id: 1, name: "Bob", age: 34},
+        {id: 2, name: "Alex", age: 25},
+        {id: 3, name: "Ann", age: 30},
+        {id: 4, name: "John", age: 23},
+    ]
+    const users = [
+        {id: 1, userName: "Bob", age: 34},
+        {id: 2, userName: "Alex", age: 25},
+        {id: 3, userName: "Ann", age: 30},
+        {id: 4, userName: "John", age: 23},
+    ]
+
+    const [usersList, setUsersList] = useState<Array<UserType>>([])
+    //debugger
+    return (
+        <main>
+            <h5>User list:  </h5>
+
+            <p>Тут будет список пользователей</p>
+        </main>
+    )
+}
+
 ReactDOM.render(
-    <App/>, document.getElementById('root')
+    <UsersList />, document.getElementById('root')
 );
+// Что надо написать вместо XXX, чтобы код работал?

@@ -1,46 +1,25 @@
-import React, {useState} from 'react';
+
+import React, {useState, MouseEvent} from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
-type UserType = {
-    id: number
-    name: string
-    age: number
-}
-
-function User(props: UserType) {
-
+function Button () {
+    const [tagName, setTagName] = useState<string>()
+    const onClickHandler = (e: MouseEvent<HTMLButtonElement>) => {
+        setTagName(e.currentTarget.tagName)
+    }
     return (
-        <li>User {props.name}: {props.age} y.o.</li>
-    )
-}
-
-function UsersList() {
-    const states = [
-        {id: 1, name: "Bob", age: 34},
-        {id: 2, name: "Alex", age: 25},
-        {id: 3, name: "Ann", age: 30},
-        {id: 4, name: "John", age: 23},
-    ]
-    const users = [
-        {id: 1, userName: "Bob", age: 34},
-        {id: 2, userName: "Alex", age: 25},
-        {id: 3, userName: "Ann", age: 30},
-        {id: 4, userName: "John", age: 23},
-    ]
-
-    const [usersList, setUsersList] = useState<Array<UserType>>([])
-    //debugger
-    return (
-        <main>
-            <h5>User list:  </h5>
-
-            <p>Тут будет два  списока пользователей</p>
-        </main>
+        <>
+            <p>{tagName}</p>
+            <button onClick={onClickHandler} >
+                <span>Click</span>
+            </button>
+        </>
     )
 }
 
 ReactDOM.render(
-    <UsersList />, document.getElementById('root')
+    <Button/>, document.getElementById('root')
 );
-// Что надо написать вместо XXX, чтобы код работал?
+
+// Что надо написать вместо ххх, что бы на странице появился текст BUTTON?

@@ -197,7 +197,7 @@ function UsersList() {
     const [users, setUsers] = useState<Array<UserType>>(data)
     const deleteUser = (userID: number) => {
         const filteredUsers = users.filter(u => u.id !== userID)
-        // setUsers(xxx)
+         setUsers(filteredUsers)
     }
     return (
         <main>

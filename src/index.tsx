@@ -20,7 +20,7 @@ function Notes() {
             />
             <div>
                 <button
-                     onClick={Notes}
+                     onClick={onClickHandler}
                 >Clear notes list</button>
             </div>
             <h4>Notes:</h4>
@@ -32,7 +32,4 @@ function Notes() {
 }
 
 ReactDOM.render(
-    <Notes/>, document.getElementById('root')
-);
-// Что надо написать вместо ххх,
-// чтобы при клике список заметок очищался?
+    <Notes/

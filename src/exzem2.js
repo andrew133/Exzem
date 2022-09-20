@@ -79,7 +79,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 function UsersList() {
-    const [users, setUsers] = useState<Array<string>>(["Bob", "Alex", "Ann"])
+    const [users, setUsers] = useState<Array<string>>(["Boob", "Alex", "Ann"])
     return (
         <p>Тут будет список пользователей</p>
     )

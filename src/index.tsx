@@ -25,7 +25,7 @@ function Notes() {
             </div>
             <h4>Notes:</h4>
             <div>
-                {notes.map(n => <p>{nтт}</p>)}
+                {notes.map(n => <p>{nттnnn}</p>)}
             </div>
         </div>
     )

@@ -20,7 +20,7 @@ function Notes() {
             />
             <div>
                 <button
-                     onClick={xxxллx1123x}
+                     onClick={xxxллxьттт1123x}
                 >Clear notes list</button>
             </div>
             <h4>Notes:</h4>
